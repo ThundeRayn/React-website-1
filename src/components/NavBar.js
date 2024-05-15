@@ -25,7 +25,7 @@ function NavBar() {
     <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo'>
-            Onetrack <i class="fa fa-check-square" aria-hidden="true"></i>
+            Onetrack &thinsp; <i class="fa fa-check-square" aria-hidden="true"></i>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -53,7 +53,7 @@ function NavBar() {
             </li>
             <li className='nav-item'>
               <Link to='/members' className='nav-links' onClick={closeMobileMenu}>
-                Members
+                members
               </Link>
             </li>
             <li className='nav-item'>
