@@ -1,0 +1,24 @@
+import { ReactNode } from "react";
+
+interface propAlerts{
+    children: ReactNode;
+    onClose: ()=>void;
+}
+
+const Alert = ({children: text, onClose} : propAlerts) => {
+  return (
+    <div 
+      className="alert alert-success alert-dismissible fade show" 
+      role="alert">
+    {text}
+    <button 
+      type="button" 
+      className="btn-close" 
+      data-bs-dismiss="alert" 
+      aria-label="Close"
+      onClick={onClose}></button>
+    </div>
+  )
+}
+
+export default Alert
