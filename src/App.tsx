@@ -1,29 +1,23 @@
 
-import ListGroup from "./components/ListGroup";
+import { useState } from 'react';
 import './App.css';
-import { MdAccountCircle } from "react-icons/md";
-import Button from "./components/Button/Button";
-import Icon from "./components/Icons/Icon";
+import NavBar from './components/NavBar';
+import Notification from './components/Notification';
+import Form from './components/Form';
 
 
 function App(){
+
   //grouplist variables
-  let items = ["Hamilton","Toronto","Richmond Hill","new York"];
-  const handleSelectItem=(item:string) => {
-    console.log(item);
-  }
+  const [notificationList,Set_List]=useState(['notification one', 'notification two']);
 
-
-  return <div>
-    <MdAccountCircle size='30'/>
-    <Icon onClick={()=>console.log('clicked')}/>
-    <Button onClick={()=>{}}> profile </Button>
-    <ListGroup 
-      items={items} 
-      heading={"Cities"} 
-      onSelectItem={handleSelectItem}
-    />
-  </div>
+  return (
+  <div>
+    <NavBar notificationCount={notificationList.length}/>
+    <Notification notifications={notificationList} onClear={()=>
+      Set_List([])} update={()=>{Set_List([...notificationList, 'notification three'])}}/>
+    <Form />
+  </div>)
 
 }
 

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { RiDashboardFill } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
+import { HiOutlineMenu } from "react-icons/hi";
 
 interface IconProps{
     onClick: ()=>void;
@@ -15,14 +16,14 @@ const Icon = ({onClick}:IconProps) => {
 
   if (SelectIcon) return (
     <div>
-        <RiDashboardFill 
+        <RxCross2 
             size={29} 
-            color='grey' 
+            color='#A7A7A7' 
             onClick={toggle}
         />
     </div>
   )
-  return <div><RiDashboardFill size={29} onClick={toggle}/></div>
+  return <div><HiOutlineMenu size={29} color='#A7A7A7' onClick={toggle}/></div>
 }
 
 export default Icon
