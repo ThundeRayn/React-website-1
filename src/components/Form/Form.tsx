@@ -43,8 +43,9 @@ const Form = () => {
   }
 
   return (
+    <div className={styles['form-container']}>
     <form className={styles['form']} onSubmit={handleSubmit(onSubmit)} autoComplete="off" >
-      <h1>Add Milestone</h1>
+      <p className={styles['title']}>Add Milestone</p>
       {/* Milstone Title*/}
         <div className={styles["mb-3"]}>
             <label htmlFor="mstitle" className="form-label"/>
@@ -84,7 +85,7 @@ const Form = () => {
       {errors.deadline && <p className="text-danger">{errors.deadline.message}</p>}
 
       {/* Revenue Amount*/}
-      {schema.mstype === 0 && (console.log('false'))}
+      {/*schema.mstype === 0 && (console.log('false'))*/}
 
         <div className={styles["mb-3"]}>
         <label htmlFor="amount" className="form-label"/>
@@ -118,6 +119,7 @@ const Form = () => {
           <button className={styles["submit-btn"]} disabled={!isValid} type='submit'>Submit</button>
         </div>
     </form>
+    </div>
   )
 }
 

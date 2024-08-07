@@ -28,9 +28,9 @@ function NavBar({notificationCount}:notificationProps){
 
     return(
     <div className={styles.nav_container}>
-        <Icon BeforeClick={RxCross2} AfterClick={HiOutlineMenu} onClick={()=>{console.log("expand")}}/>
         
         <ul className={styles.nav}>
+        <Icon BeforeClick={RxCross2} AfterClick={HiOutlineMenu} onClick={()=>{console.log("expand")}}/>
         {icon_list.map((item,index)=>(
           <li className={styles.tab}>
 
@@ -43,7 +43,9 @@ function NavBar({notificationCount}:notificationProps){
         </ul>
 
         <p>Notification received: {notificationCount}</p>
-
+        {!(JSON.stringify(notificationCount) === '0') 
+        && <span className={styles.dot}></span>}
+        
     </div>
     );
 }

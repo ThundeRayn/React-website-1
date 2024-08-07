@@ -1,6 +1,6 @@
 .toggle-container{
     position: relative;
-    width: 280px;
+    width: 300px;
     height: 32px;
     background-color: #454546;
     cursor: pointer;
@@ -13,7 +13,7 @@
     justify-content: center;
     align-items:center;
     box-sizing: border-box;
-    width: 140px;
+    width: 150px;
     height: 28px;
     line-height: 16px;
     border-radius: 10px;
@@ -25,7 +25,7 @@
     padding: 6px; /*helps ceter the text*/
     position: absolute;
     transition: all 0.2s ease;
-    left: 140px;
+    left: 150px;
 }
 
 .disable{
@@ -33,7 +33,7 @@
     justify-content: center;
     align-items:center;
     box-sizing: border-box;
-    width: 140px;
+    width: 150px;
     height: 28px;
     line-height: 16px;
     border-radius: 10px;
@@ -49,7 +49,7 @@
 
 .lable{
     position: flex;
-    width: 140px;
+    width: 150px;
     height: 28px;
     line-height: 16px;
     cursor:pointer;

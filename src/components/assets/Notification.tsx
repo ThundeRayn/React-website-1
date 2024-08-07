@@ -19,4 +19,4 @@ const Notification = ({notifications, onClear,update}: Props) => {
   )
 }
 
-export default Notification
+export default Notification;
