@@ -1,0 +1,73 @@
+.toggle-container{
+    position: relative;
+    width: 280px;
+    height: 32px;
+    background-color: #454546;
+    cursor: pointer;
+    user-select: none;
+    border-radius:10px;
+    padding: 2px;
+}
+.toggle-btn{
+    position: flex;
+    justify-content: center;
+    align-items:center;
+    box-sizing: border-box;
+    width: 140px;
+    height: 28px;
+    line-height: 16px;
+    border-radius: 10px;
+    cursor:pointer;
+    color: #252525;
+    background-color: #0892E0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgb(0,0,0,0.25);
+    padding: 6px; /*helps ceter the text*/
+    position: absolute;
+    transition: all 0.2s ease;
+    left: 140px;
+}
+
+.disable{
+    position: flex;
+    justify-content: center;
+    align-items:center;
+    box-sizing: border-box;
+    width: 140px;
+    height: 28px;
+    line-height: 16px;
+    border-radius: 10px;
+    cursor:pointer;
+    color: #252525;
+    background-color: #0892E0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgb(0,0,0,0.25);
+    padding: 6px; /*helps ceter the text*/
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+.lable{
+    position: flex;
+    width: 140px;
+    height: 28px;
+    line-height: 16px;
+    cursor:pointer;
+    text-align: center;
+    padding: 6px; /*helps ceter the text*/
+    position: absolute; /*moves to the right*/
+    transition: all 0.2s ease;
+    left: 140px;
+}
+
+.lable1{
+    position: flex;
+    width: 140px;
+    height: 28px;
+    line-height: 16px;
+    cursor:pointer;
+    text-align: center;
+    padding: 6px; /*helps ceter the text*/
+    position: absolute; /*moves to the right*/
+    transition: all 0.2s ease;
+}

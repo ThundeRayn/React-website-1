@@ -1,9 +1,10 @@
 
 import { useState } from 'react';
-import './App.css';
 import NavBar from './components/NavBar';
-import Notification from './components/Notification';
+//import Notification from './components/Notification';
 import Form from './components/Form';
+import Test from './components/Test';
+import './App.css';
 
 
 function App(){
@@ -14,9 +15,11 @@ function App(){
   return (
   <div>
     <NavBar notificationCount={notificationList.length}/>
-    <Notification notifications={notificationList} onClear={()=>
-      Set_List([])} update={()=>{Set_List([...notificationList, 'notification three'])}}/>
-    <Form />
+    {/*<Notification notifications={notificationList} onClear={()=>
+      Set_List([])} update={()=>{Set_List([...notificationList, 'notification three'])}}/>*/}
+    <div>
+      <Form />
+    </div>
   </div>)
 
 }

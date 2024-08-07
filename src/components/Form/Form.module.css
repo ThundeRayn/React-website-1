@@ -1,7 +1,90 @@
 .form{
-    padding-left:20px;
+    padding-left:120px;
+    padding-top:20px;
 }
 
 .mb-3{
-    padding-top:10px;
+    padding-top:0px;
+    position: relative;
 }
+
+.mb-3 i{
+    top:25px; /*25*/
+    left:130px; /*130/ 232*/
+    position:absolute;
+    background-color:#454546;
+    pointer-events: none; /*makes it do nothing and does not cover other elements*/
+}
+
+.form-control{
+    display: flex; /*relative will make txt and input bar side by side*/
+    width: 280px;
+    height: 32px;
+    background-color: #454546;
+    cursor: pointer;
+    user-select: none;
+    border-radius:10px;
+    border-style: none;
+    color: #B3B3B3;
+    padding: 14px;
+    color-scheme:dark;
+    /*flex-flow: row-reverse;*/
+}
+
+
+.form-large{
+    display: flex; /*relative will make txt and input bar side by side*/
+    width: 280px;
+    height: 160px;
+    background-color: #454546;
+    cursor: pointer;
+    user-select: none;
+    border-radius:10px;
+    border-style: none;
+    color: #B3B3B3;
+    padding: 14px;
+}
+
+.submit-btn{
+    position: flex;
+    background-color: #0892E0;
+    color:#272727;
+    top: 10px;
+    width: 280px;
+    height: 28px;
+    line-height: 16px;
+    cursor:pointer;
+    text-align: center;
+    padding: 6px; /*helps ceter the text*/
+    position: absolute; /*moves to the right*/
+    transition: all 0.2s ease;
+    border:none;
+    border-radius:10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    background: #1278b3;
+  }
+
+.submit-btn:after {
+    content: "";
+    background: #a2a2a2;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+
+  .submit-btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }

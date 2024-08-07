@@ -1,12 +1,17 @@
-
 import { useState } from "react";
-import { RxCross2 } from "react-icons/rx";
-import { HiOutlineMenu } from "react-icons/hi";
+import styled from 'styled-components';
+
+const Clickable = styled.div`
+    cursor: pointer
+`;
+
 
 interface IconProps{
+    BeforeClick: React.ElementType;
+    AfterClick: React.ElementType;
     onClick: ()=>void;
 }
-const Icon = ({onClick}:IconProps) => {
+const Icon = ({onClick,BeforeClick,AfterClick}:IconProps) => {
     const [SelectIcon, Set_SelectIcon] = useState(false);
     const toggle = () => {
         Set_SelectIcon(!SelectIcon);
@@ -15,15 +20,15 @@ const Icon = ({onClick}:IconProps) => {
 
 
   if (SelectIcon) return (
-    <div>
-        <RxCross2 
+    <Clickable>
+        <BeforeClick 
             size={29} 
             color='#A7A7A7' 
             onClick={toggle}
         />
-    </div>
+    </Clickable>
   )
-  return <div><HiOutlineMenu size={29} color='#A7A7A7' onClick={toggle}/></div>
+  return <Clickable><AfterClick size={29} color='#A7A7A7' onClick={toggle}/></Clickable>
 }
 
 export default Icon

@@ -1,12 +1,19 @@
+//navbar react icons
 import { MdAccountCircle } from "react-icons/md";
 import { RiDashboardFill } from "react-icons/ri";
 import { VscMilestone } from "react-icons/vsc";
 import { BiTask } from "react-icons/bi";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/io";
+import { IoNotifications } from "react-icons/io5";
+//switch react icons
+import { RxCross2 } from "react-icons/rx";
+import { HiOutlineMenu } from "react-icons/hi";
+//imports
 import { useState } from "react";
-import Icon from "../Icons/Icon";
+import Icon from "../Icons/SwitchIcon";
 import styles from './NavBar.module.css';
+import SelectIcon from "../Icons/SelectIcon";
 
 interface notificationProps{
     notificationCount: number;
@@ -16,48 +23,23 @@ function NavBar({notificationCount}:notificationProps){
 
     //tab icons
     const [SelectTab, Set_SelectTab] = useState(0);
+    const icon_list=[MdAccountCircle,RiDashboardFill,IoNotifications,VscMilestone,BiTask,RiMoneyDollarCircleFill,IoIosPeople]
+    const icon_size=['30','28','28','28','28','28', '28']
 
     return(
-    <div>
-        <Icon onClick={()=>{console.log("expand")}}/>
+    <div className={styles.nav_container}>
+        <Icon BeforeClick={RxCross2} AfterClick={HiOutlineMenu} onClick={()=>{console.log("expand")}}/>
         
         <ul className={styles.nav}>
-            <li className="tab">
-                {(SelectTab===0)? 
-                <MdAccountCircle size='30' color='#4A4A4B'/> 
-                : <MdAccountCircle size='30' color='#A7A7A7'
-                onClick={()=>{Set_SelectTab(0)}}/>}
-            </li>
-            <li>
-                {(SelectTab===1)? 
-                <RiDashboardFill size='28' color='#4A4A4B'/> 
-                : <RiDashboardFill size='28' color='#A7A7A7'
-                onClick={()=>{Set_SelectTab(1)}}/>}
-            </li>
-            <li>
-                {(SelectTab===2)? 
-                <VscMilestone size='28' color='#4A4A4B'/> 
-                : <VscMilestone size='28' color='#A7A7A7'
-                onClick={()=>{Set_SelectTab(2)}}/>}
-            </li>
-            <li>
-                {(SelectTab===3)? 
-                <BiTask size='28' color='#4A4A4B'/> 
-                : <BiTask size='28' color='#A7A7A7'
-                onClick={()=>{Set_SelectTab(3)}}/>}
-            </li>
-            <li>
-                {(SelectTab===4)? 
-                <RiMoneyDollarCircleFill size='28' color='#4A4A4B'/> 
-                : <RiMoneyDollarCircleFill size='28' color='#A7A7A7'
-                onClick={()=>{Set_SelectTab(4)}}/>}
-            </li>
-            <li>
-                {(SelectTab===5)? 
-                <IoIosPeople size='28' color='#4A4A4B'/> 
-                : <IoIosPeople size='28' color='#A7A7A7'
-                onClick={()=>{Set_SelectTab(5)}}/>}
-            </li>
+        {icon_list.map((item,index)=>(
+          <li className={styles.tab}>
+
+            {(SelectTab===index)? 
+                <SelectIcon Icon={item} newsize={icon_size[index]} newcolor='#4A4A4B'/> 
+                : <SelectIcon Icon={item} newsize={icon_size[index]}  newcolor='#A7A7A7'
+                onClick={()=>{Set_SelectTab(index)}}/>}
+          </li>)
+          )}
         </ul>
 
         <p>Notification received: {notificationCount}</p>
