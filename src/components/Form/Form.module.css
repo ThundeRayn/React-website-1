@@ -1,5 +1,5 @@
 .form-container{
-    padding-top:40px;
+    transition: all 0.5s ease-in-out; 
     height: 100%;
     width: 400px;
     top: 0px;
@@ -9,10 +9,77 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     overflow: auto;
+    box-shadow: 8px 2px 6px 8px #292929;
+
+    -webkit-animation: slideIn .5s forwards;
+    -moz-animation: slideIn .5s forwards;
+    animation: slideIn .5s forwards;
+    /*
+    -webkit-animation: slideOut .5s backwards;
+    -moz-animation: slideOut .5s backwards;
+    animation: slideOut .5s backwards;*/
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@-webkit-keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(310px);
+    }
+ }
+
+ @-webkit-keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+      100% {
+        transform: translateX(310px);
+    }
+}
+
+.form-container-closed{
+    transition: all 0.5s ease; 
+    display:none;
+    /*height: 100%;
+    width: 400px;
+    top: 0px;
+    right:-400px;
+    position:fixed;
+    background-color:#252525;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: auto;*/
 }
 
 .form{
     padding-left:50px;
+    padding-top:40px;
+}
+
+.close-btn{
+    position:absolute;
+    padding-left:20px;
+    padding-top:20px;
+    cursor:pointer;
 }
 
 .title{
@@ -31,15 +98,34 @@
 }
 
 .mb-3 i{
-    top:25px; /*25*/
-    left:130px; /*130/ 232*/
+    top:22px;
+    left:265px;
     position:absolute;
     background-color:#454546;
     pointer-events: none; /*makes it do nothing and does not cover other elements*/
 }
 
+.mb-3-amount{
+    padding-top:0px;
+    position: relative;
+}
+
+.mb-3-amount i{
+    top:22px; /*25*/
+    left:252px; /*130/ 252*/
+    position:absolute;
+    background-color:#454546;
+    pointer-events: none; /*makes it do nothing and does not cover other elements*/
+}
+
+.mb-3-amount-disabled{
+    display:none;
+}
+
+
 .form-control{
-    display: flex; /*relative will make txt and input bar side by side*/
+    margin-top:20px;
+    display: inline-block; /*relative will make txt and input bar side by side*/
     width: 300px;
     height: 32px;
     background-color: #454546;
@@ -52,7 +138,6 @@
     color-scheme:dark;
     /*flex-flow: row-reverse;*/
 }
-
 
 .form-large{
     display: flex; /*relative will make txt and input bar side by side*/
@@ -91,9 +176,35 @@
     background: #1278b3;
   }
 
+
+.submit-btn:disabled,
+.submit-btn[disabled]{
+    position: flex;
+    background-color: #b3b3b3;
+    color:#757575;
+    top: 20px;
+    width: 300px;
+    height: 28px;
+    line-height: 16px;
+    cursor:default;
+    text-align: center;
+    padding: 6px;
+    position: absolute;
+    transition: 0;
+    border:none;
+    border-radius:10px;
+    -webkit-transition-duration: disabled; /* Safari */
+    transition-duration: 0;
+    overflow: disabled;
+}
+
+.submit-btn:disabled:hover {
+    background: #b3b3b3;
+  }
+
 .submit-btn:after {
     content: "";
-    background: #a2a2a2;
+    background: #7ab8cb;
     display: block;
     position: absolute;
     padding-top: 300%;
@@ -109,4 +220,8 @@
     margin: 0;
     opacity: 1;
     transition: 0s
+  }
+
+  .submit-btn:disabled:after {
+    transition: none;
   }

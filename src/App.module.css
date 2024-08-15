@@ -3,6 +3,16 @@
     padding-left: 100px;
 }
 
+.dashboard{
+    flex-direction : row;
+}
+
 .notification{
     margin-top: 40px;
+}
+
+.border{
+    position:absolute;
+    left: 450px;
+    top: 50px;
 }

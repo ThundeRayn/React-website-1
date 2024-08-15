@@ -1,5 +1,6 @@
 
 .nav_container{
+    transition: all 0.5s ease;
     background-color: #252525;
     width: 40px;
     height: 100%;
@@ -7,27 +8,123 @@
     left: 0px;
     position: fixed;
     border-right: 1px solid rgb(79, 75, 75);
+    box-shadow: 2px 0px 3px #2b2b2b;
 }
+
+.nav_container_open{
+    transition: all 0.5s ease; /*slidein animation*/
+    background-color: #252525;
+    width: 120px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    border-right: 1px solid rgb(79, 75, 75);
+    box-shadow: 2px 0px 3px #2b2b2b;
+}
+
 .nav{
     list-style-type: none; 
     padding: 0; 
-    padding-top:6px;
+    padding-top:34px;
     padding-left:6px;
     margin: 0;
 }
+
 .tab{
-    padding-top: 7px;
+    transition: all 0.5s ease;
+    padding-top: 9px;
     width: 30px;
     cursor: pointer;
+    width:auto; /*auto makes width transaction work*/
+}
+
+.selected-icon{
+    transition: all 0.5s ease;
+    background-color: #CACACA;
+    border-radius:0px 5px 5px 5px;
+    width: 30px;
+}
+
+.selected-icon-open{
+    transition: all 0.5s ease;
+    background-color: #CACACA;
+    width:110px;
+    border-radius:0px 5px 5px 5px;
+}
+
+.hover-icon:hover{
+    background-color: #4A4A4B;
+    border-radius:0px 5px 5px 5px;
+    width:30px;
+}
+
+.hover-icon-open:hover{
+    background-color: #4A4A4B;
+    position:flex;
+    width:110px;
+    border-radius:0px 5px 5px 5px;
+}
+
+.nav-titles{
+    position:absolute;
+    pointer-events: none;
+    top:30px;
+    list-style-type: none;
+    font-size:small;
+    /*animation*/
+    -webkit-animation: slideIn .5s forwards;
+    -moz-animation: slideIn .5s forwards;
+    animation: slideIn .5s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(-50px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+.nav-titles-list{
+    margin-top:18px;
+    margin-bottom:12px;
+    padding-left:12px;
+    pointer-events: none;
+    font-weight:330;
+}
+
+.nav-titles-item{
+    color:black;
+}
+
+.open-i{
+    transition: all 0.5s ease;
+    position: fixed;
+    padding-left: 86px;
+    padding-top:6px;
+}
+
+.open-i_open{
+    transition: all 0.5s ease;
+    position: fixed;
+    padding-top:6px;
+    padding-left:6px;
 }
 
 .dot{
     background-color: rgb(227, 47, 47);
-    height:8px;
-    width:8px;
+    height:12px;
+    width:12px;
     display: inline-block;
-    border-radius:5px;
+    border-radius:12px;
     position:absolute;
     top: 134px;
     left: 25px;
+    font-size:10px;
+    padding-left:3px;
+    text-justify: center;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
 }

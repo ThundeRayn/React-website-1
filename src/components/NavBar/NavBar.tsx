@@ -21,30 +21,57 @@ interface notificationProps{
 
 function NavBar({notificationCount}:notificationProps){
 
+    //open nav bar
+    const [Open, Set_Open] = useState(false);
+    const openClose = () =>{Set_Open(!Open)}
+
     //tab icons
     const [SelectTab, Set_SelectTab] = useState(0);
     const icon_list=[MdAccountCircle,RiDashboardFill,IoNotifications,VscMilestone,BiTask,RiMoneyDollarCircleFill,IoIosPeople]
     const icon_size=['30','28','28','28','28','28', '28']
+    const icon_title=['profile','dashboard','notification','milestone','tasks','expenses','member']
 
     return(
-    <div className={styles.nav_container}>
+    <div className={Open? styles['nav_container_open'] : styles['nav_container']}>
+         
+        
+        <i className={Open? styles['open-i']:styles['open-i_open']}>
+        <Icon 
+            BeforeClick={RxCross2} 
+            AfterClick={HiOutlineMenu} 
+            onClick={openClose}
+        /></i>
         
         <ul className={styles.nav}>
-        <Icon BeforeClick={RxCross2} AfterClick={HiOutlineMenu} onClick={()=>{console.log("expand")}}/>
         {icon_list.map((item,index)=>(
           <li className={styles.tab}>
 
             {(SelectTab===index)? 
-                <SelectIcon Icon={item} newsize={icon_size[index]} newcolor='#4A4A4B'/> 
-                : <SelectIcon Icon={item} newsize={icon_size[index]}  newcolor='#A7A7A7'
-                onClick={()=>{Set_SelectTab(index)}}/>}
+                <div className={!Open? styles['selected-icon']:styles['selected-icon-open']}>
+                    <SelectIcon Icon={item} newsize={icon_size[index]} newcolor='#4A4A4B'/>
+                </div>
+                : 
+                    <div className={!Open? styles['hover-icon']: styles['hover-icon-open'] }>
+                        <SelectIcon Icon={item} newsize={icon_size[index]}  newcolor='#A7A7A7' onClick={()=>{Set_SelectTab(index)}} />
+                    </div>
+                }
           </li>)
           )}
         </ul>
+        
+        <div>
+        {Open && <ul className={styles['nav-titles']}>
+        {icon_title.map((item,index)=>(
+            <li className={styles['nav-titles-list']}>
+                {(SelectTab===index)? 
+                    <div className={styles['nav-titles-item']}>{item}</div>
+                : <div>{item}</div>
+                }
+            </li>))}
+        </ul>}</div>
 
-        <p>Notification received: {notificationCount}</p>
         {!(JSON.stringify(notificationCount) === '0') 
-        && <span className={styles.dot}></span>}
+        && <span className={styles.dot}>{notificationCount}</span>}
         
     </div>
     );

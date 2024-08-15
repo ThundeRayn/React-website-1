@@ -1,12 +1,21 @@
 import { FieldValues, useForm } from "react-hook-form";
+import { useState } from "react";
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+//toggle Icon
 import Toggle from '../Icons/Toggle';
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineEditCalendar } from "react-icons/md";
+//switch react icons
 import Icon from '../Icons/SelectIcon';
+import { RxCross2 } from "react-icons/rx";
+//local styles
 import styles from './Form.module.css';
-import { useState } from "react";
+
+interface formProps{
+  Open: boolean;
+  Set_Open:()=>void;
+}
 
 const schema = z.object({
   mstitle: z
@@ -14,18 +23,18 @@ const schema = z.object({
     .min(2, {message: 'title must be at least 2 characters'})
     .max(50, {message: 'title must be less than 50 characters'})
     .default("New Milestone"),
-  mstype:  z.boolean().default(true),
   amount:  z
     .number({invalid_type_error: 'Amount field is required'})
     .min(1,{message: 'Amount must be at least 1 dollar'})
     .default(0),
+  mstype: z.boolean().default(true),
   content: z.string().max(200, {message: 'maximum 200 characters'}),
   deadline: z.date()
 });
 
 type FormData = z.infer<typeof schema>;
 
-const Form = () => {
+const Form = ({Open,Set_Open}:formProps) => {
   const {
     register, 
     handleSubmit, 
@@ -43,7 +52,13 @@ const Form = () => {
   }
 
   return (
-    <div className={styles['form-container']}>
+    <div className={Open? styles['form-container'] : styles['form-container-closed']}>
+    <div className={styles['close-btn']}><Icon 
+        Icon={RxCross2}
+        newsize="32"
+        newcolor="#454546"
+        onClick={Set_Open}/></div>
+
     <form className={styles['form']} onSubmit={handleSubmit(onSubmit)} autoComplete="off" >
       <p className={styles['title']}>Add Milestone</p>
       {/* Milstone Title*/}
@@ -63,16 +78,14 @@ const Form = () => {
       {/* Milstone Type*/}
         <div className={styles["mb-3"]}>
           <label htmlFor="mstype" className={styles["form-label"]}/>
-          <Toggle toggle={toggle} handleToggleChange={handleToggleChange}/>
-          <input  type='checkbox'
-            {...register('mstype')}
-          />
+          <Toggle toggle={toggle} handleToggleChange={
+            handleToggleChange}/>
         </div>
 
       {/* Deadline*/}
       <div className={styles["mb-3"]}>
         <label htmlFor="deadline" className="form-label"/>
-          <i className="money-i">
+          <i>
             <Icon Icon={MdOutlineEditCalendar} newsize={"23"}/>
           </i>
           <input 
@@ -85,9 +98,7 @@ const Form = () => {
       {errors.deadline && <p className="text-danger">{errors.deadline.message}</p>}
 
       {/* Revenue Amount*/}
-      {/*schema.mstype === 0 && (console.log('false'))*/}
-
-        <div className={styles["mb-3"]}>
+        <div className={toggle? styles["mb-3-amount-disabled"] : styles["mb-3-amount"]}>
         <label htmlFor="amount" className="form-label"/>
           <i>
             <Icon Icon={MdOutlineAttachMoney} newsize={"23"}/>
@@ -104,14 +115,15 @@ const Form = () => {
         {/* Description*/}
         <div className={styles["mb-3"]}>
             <label htmlFor="content" className="form-label"/>
-            <input 
-              { ...register('content')}
+            <textarea
               id="content" 
-              type="text" 
+              rows={6}
+              cols={37}
+              typeof="text"
               maxLength={201}
               placeholder="Description"
-              className={styles["form-large"]}
-            />
+              {...register("content")}
+              className={styles["form-large"]}/>
         </div>
         {errors.content && <p className="text-danger">{errors.content.message}</p>}
 
