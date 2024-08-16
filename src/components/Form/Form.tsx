@@ -3,11 +3,11 @@ import { useState } from "react";
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 //toggle Icon
-import Toggle from '../Icons/Toggle';
+import Toggle from '../assets/Icons/Toggle';
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineEditCalendar } from "react-icons/md";
 //switch react icons
-import Icon from '../Icons/SelectIcon';
+import Icon from '../assets/Icons/SelectIcon';
 import { RxCross2 } from "react-icons/rx";
 //local styles
 import styles from './Form.module.css';

@@ -11,9 +11,9 @@ import { RxCross2 } from "react-icons/rx";
 import { HiOutlineMenu } from "react-icons/hi";
 //imports
 import { useState } from "react";
-import Icon from "../Icons/SwitchIcon";
+import Icon from "../assets/Icons/SwitchIcon";
 import styles from './NavBar.module.css';
-import SelectIcon from "../Icons/SelectIcon";
+import SelectIcon from "../assets/Icons/SelectIcon";
 
 interface notificationProps{
     notificationCount: number;
