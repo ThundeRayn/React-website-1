@@ -9,8 +9,14 @@
 
 .Notification-list{
     padding-left: 30px;
+    padding-top: 10px;
 }
 
 .list-item{
     box-shadow: 10px;
+}
+
+.list-item:hover{
+    background-color:rgb(125, 125, 125);
+    cursor:pointer;
 }

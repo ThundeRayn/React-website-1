@@ -22,6 +22,18 @@ thead tr th:last-child {
     border-top-right-radius: 10px; 
     border-bottom-right-radius:10px;}
 
-.delete-btn{
+.add-btn{
+    background-color: #323232;
+    border:#5B5B5B dashed 2px;
+    width: 92%;
+    cursor:pointer;
+    height: 6rem;
+    border-radius:10px;
+    margin-bottom: 40px;
+    padding-top: 1rem;
+    padding-left: 40%;
+}
 
+.add-btn:hover{
+    border:#5B5B5B dashed 3px;
 }

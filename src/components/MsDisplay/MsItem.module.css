@@ -1,0 +1,50 @@
+.container{
+    background-color:#5B5B5B;  /*#a6a6a6*/
+    width: 92%;
+    height: 6rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    position:relative;
+}
+
+.container:hover{
+    background-color: #4d4d4d;
+    cursor:pointer;
+}
+
+.Title h2,p{
+    padding-left: 1.5rem;
+    font-weight:200;
+    font-style:normal;
+    margin-left: 5rem;
+    position:absolute;
+    z-index:1;
+}
+
+.Title img{
+    margin-left:15px;
+    margin-top:17px;
+    position:absolute;
+    z-index:1;
+}
+.Title h2{
+    padding-top: 1rem;
+    margin-bottom: 0px;
+}
+
+.Title p{
+    margin-top:49px;
+}
+
+.progress-bg{
+    background-color:#0892E0;
+    height: 6rem;
+    margin-bottom: .5rem;
+    border-radius: 10px;
+    z-index: 0;
+    position:absolute;
+}
+
+.container:hover .progress-bg{
+    filter: brightness(80%);
+}

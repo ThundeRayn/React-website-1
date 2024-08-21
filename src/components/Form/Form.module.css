@@ -14,6 +14,7 @@
     -webkit-animation: slideIn .5s forwards;
     -moz-animation: slideIn .5s forwards;
     animation: slideIn .5s forwards;
+    z-index: 100;
     /*
     -webkit-animation: slideOut .5s backwards;
     -moz-animation: slideOut .5s backwards;
@@ -88,6 +89,7 @@
     color:#B3B3B3;
     -webkit-text-stroke-width: 0px;
     -webkit-font-smoothing: antialiased; 
+    position:relative;
     /*bigger but thinner text*/
 }
 

@@ -12,7 +12,6 @@ const Notification = ({notifications, onClear,update}: Props) => {
       <div className={styles['Notification-container']}>
       
       <ul className={styles['Notification-list']}>
-        <p>Notification</p>
           {notifications.map(item => <li key={item} className={styles['list-item']}>{item}</li>)}
       </ul></div>
 

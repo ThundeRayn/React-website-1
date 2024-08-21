@@ -1,9 +1,10 @@
 import styles from './Border.module.css';
+import * as loadData from '../../data/loadData';
 
 const Board = () => {
   return (
     <div className={styles['container']}>
-        <p className={styles['content']}>manager set up some notifications for everyone to read</p>
+        <p className={styles['content']}>{loadData.annoucement}</p>
     </div>
   )
 }
