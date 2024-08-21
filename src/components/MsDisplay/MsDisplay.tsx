@@ -25,19 +25,57 @@ const MsDisplay = ({milestones, onDelete}: MsProps) => {
   const [Open, Set_Open] = useState(false)
   const openform = () => { Set_Open(!Open) }
 
+  var today = new Date();
+
+
   if (milestones.length === 0) return null;
 
   return (
     <div>
-
-        {milestones.map(m => 
+      {/**overdued */}
+      {milestones.map(m => 
+        m.progress !==100 
+        && new Date(m.deadline).setHours(0,0,0,0) < today.setHours(0,0,0,0) 
+        &&
             <MsItem 
                 id={m.id} 
                 title={m.title} 
                 type={m.type} 
                 description={m.description} 
                 deadline={m.deadline}
-                progress={m.progress}/>)}
+                progress={m.progress}/>
+          )
+        }
+
+      {/**in progress */}
+      {milestones.map(m => 
+        m.progress !==100 
+        && new Date(m.deadline).setHours(0,0,0,0) >= today.setHours(0,0,0,0) 
+        &&
+            <MsItem 
+                id={m.id} 
+                title={m.title} 
+                type={m.type} 
+                description={m.description} 
+                deadline={m.deadline}
+                progress={m.progress}/>
+          )
+        }
+
+        {/**completed */}
+        {milestones.map(m => 
+        m.progress===100 &&
+            <MsItem 
+                id={m.id} 
+                title={m.title} 
+                type={m.type} 
+                description={m.description} 
+                deadline={m.deadline}
+                progress={m.progress}/>
+          )
+        }
+
+        
         <Form Open={Open} Set_Open={openform} />
 
         <div onClick={openform} className={styles['add-btn']}>  

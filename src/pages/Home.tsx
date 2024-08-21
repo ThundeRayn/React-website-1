@@ -15,6 +15,7 @@ export const HomePage =({navOpen}:Props) =>{
     const List_Clear = () => { Set_List([]) }
     const List_Update = () => { Set_List(notificationList => [...notificationList, 'notification three']) }
 
+
     //task consts
     const [selectedtaskType, setSeletedtaskType] = useState("")
     const [tasks, SetTasks] = useState(loadData.tasks)
@@ -25,7 +26,6 @@ export const HomePage =({navOpen}:Props) =>{
 
     return(
         <>
-        {/*<NavBar notificationCount={1} page={1} />*/}
             <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
                     :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
 

@@ -1,5 +1,5 @@
 import styles from './TsFilter.module.css';
-import {tstypes} from '../../App';
+import {tstypes} from '../../data/loadData';
 
 interface Props{
     onSelectType: (type:string)=>void;

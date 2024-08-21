@@ -1,5 +1,5 @@
 import styles from './MilestoneFilter.module.css';
-import {mstypes} from '../../App';
+import {mstypes} from '../../data/loadData';
 
 interface Props{
     onSelectType: (type:string)=>void;

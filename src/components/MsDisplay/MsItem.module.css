@@ -12,13 +12,12 @@
     cursor:pointer;
 }
 
-.Title h2,p{
+.msItem-txt{
+    margin-left: 5rem;
     padding-left: 1.5rem;
     font-weight:200;
-    font-style:normal;
-    margin-left: 5rem;
     position:absolute;
-    z-index:1;
+    font-style:normal;
 }
 
 .Title img{
@@ -45,6 +44,19 @@
     position:absolute;
 }
 
+.overdue-bg{
+    background-color:#FF1818;
+    height: 6rem;
+    margin-bottom: .5rem;
+    border-radius: 10px;
+    z-index: 0;
+    position:absolute;
+}
+
 .container:hover .progress-bg{
+    filter: brightness(80%);
+}
+
+.container:hover .overdue-bg{
     filter: brightness(80%);
 }

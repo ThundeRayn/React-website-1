@@ -6,8 +6,9 @@
 }
 
 .content{
+    display:inline-block;
     margin-top: 10px;
-    margin-left: 2px;
+    margin-left: 14px;
     width: 280px;
     height: 120px;
     word-break: break-word;

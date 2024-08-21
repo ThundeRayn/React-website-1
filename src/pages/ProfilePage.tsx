@@ -1,10 +1,20 @@
-import NavBar from "../components/NavBar"
+import ProfileDisplay from '../components/Form/ProfileDisplay/ProfileDisplay';
+import * as loadData from '../data/loadData';
 
-export const ProfilePage =() =>{
+
+interface Props{
+    navOpen:boolean
+}
+
+export const ProfilePage =({navOpen}:Props) =>{
     return(
         <>
-        {/*<NavBar notificationCount={1} page={0} />*/}
-            <h1>Profile page</h1>
+        <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
+            :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal"}}>
+                My Profile</h1>
+            <ProfileDisplay member={loadData.users[0]}/>
+        </div>
         </>
     )
 }

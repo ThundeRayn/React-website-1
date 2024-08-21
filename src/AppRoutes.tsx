@@ -10,14 +10,16 @@ import {ExpensePage} from './pages/ExpensePage';
 import {MembersPage} from './pages/MembersPage';
 import { SignInPage } from "./pages/SignInPage";
 import { SignUpPage } from "./pages/SignUpPage";
+
 import NavBar from "./components/NavBar";
 import { useState } from "react";
+import * as loadData from './data/loadData';
  
 export const AppRoutes =() => {
     const [Open, Set_Open] = useState(false);
     return(
         <Router>
-            <NavBar notificationCount={1} Open={Open} Set_Open={()=>Set_Open(!Open)}/>
+            <NavBar notificationCount={loadData.notifications.length} Open={Open} Set_Open={()=>Set_Open(!Open)}/>
             <Routes>
 
                 <Route path="*" element={<NotFoundPage/>}/>
@@ -28,7 +30,7 @@ export const AppRoutes =() => {
 
 
                 <Route path="/home" element={<HomePage navOpen={Open}/>}/>
-                <Route path="/profile" element={<ProfilePage/>}/>
+                <Route path="/profile" element={<ProfilePage navOpen={Open}/>}/>
                 <Route path="/notification" element={<NotificationPage/>}/>
                 <Route path="/milestone" element={<MilestonePage navOpen={Open}/>}/>
                 <Route path="/tasks" element={<TaskPage navOpen={Open}/>}/>
