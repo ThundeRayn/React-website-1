@@ -72,6 +72,7 @@
     top:30px;
     list-style-type: none;
     font-size:small;
+    user-select: none;
     /*animation*/
     -webkit-animation: slideIn .5s forwards;
     -moz-animation: slideIn .5s forwards;

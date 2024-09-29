@@ -1,7 +1,15 @@
+
+
 export const SignUpPage =() =>{
     return(
         <>
-            <h1>SignUp page</h1>
+        <div style={{
+            paddingLeft: "100px", 
+            paddingTop:"20px", 
+            transition: "all 0.5s ease-in-out"}}>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>
+                New Onedrug Member Sign Up</h1>
+        </div>
         </>
     )
 }

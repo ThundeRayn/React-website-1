@@ -1,4 +1,4 @@
-import ProfileDisplay from '../components/Form/ProfileDisplay/ProfileDisplay';
+import ProfileDisplay from '../components/ProfileDisplay';
 import * as loadData from '../data/loadData';
 
 
@@ -11,7 +11,7 @@ export const ProfilePage =({navOpen}:Props) =>{
         <>
         <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
             :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
-            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal"}}>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>
                 My Profile</h1>
             <ProfileDisplay member={loadData.users[0]}/>
         </div>

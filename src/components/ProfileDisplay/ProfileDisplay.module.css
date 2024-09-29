@@ -30,10 +30,12 @@
 
 .info-list{
     padding-top: 2%;
+    padding-bottom: 1rem;
 }
 
 .content{
     display:inline-block;
+    position:fixed;
     padding-left: 25px;
     font-size:17px;
     /*word-wrap: break-word;*/

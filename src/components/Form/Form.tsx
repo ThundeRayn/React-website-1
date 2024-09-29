@@ -38,6 +38,7 @@ const Form = ({Open,Set_Open}:formProps) => {
   const {
     register, 
     handleSubmit, 
+    reset,
     formState: {errors, isValid}
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -45,7 +46,10 @@ const Form = ({Open,Set_Open}:formProps) => {
   });
   console.log(errors);
 
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    reset();
+  };
   const [toggle, SetToggle] = useState(false);
   const handleToggleChange = ()=>{
     SetToggle(!toggle);

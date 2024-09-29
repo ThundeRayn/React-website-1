@@ -1,14 +1,14 @@
 export const notifications = [
-  "UserA leave an unread comment", "UserB replied you", "this is good"
+  "UserA leave an unread comment", "UserB replied you"
 ]
 
 export const annoucement = "The manager left some important annoucement for everyone to view. However the text here is reeeeeaaaaaaaaaaaaaaaaaaaaaaaaaaally long if you don't wanna miss anything you should really scroll down a bit"
 //export const annoucement = "That is just a joke"
 
 export const milestones = [
-    { id: 1, title: "Milestone not been started", type: "task goal", description: "some d", deadline: "2024/11/11", progress: 20 },
-    { id: 2, title: "Milestone In Progress", type: "task goal", description: "some d", deadline: "2024/12/01", progress: 0 },
-    { id: 3, title: "Milestone Completed", type: "revenue goal", amount: 2000, description: "some more detailed description", deadline: "2024/11/11", progress: 30 },
+    { id: 1, title: "Milestone not been started", type: "task goal", description: "some d", deadline: "2024/11/11", progress: 0 },
+    { id: 2, title: "Milestone In Progress", type: "task goal", description: "some d", deadline: "2024/12/01", progress: 10 },
+    { id: 3, title: "Milestone Completed", type: "revenue goal", amount: 2000, description: "some more detailed description", deadline: "2024/11/11", progress: 70 },
     { id: 4, title: "Milestone OverDue!", type: "task goal", description: "you have to explain us about this", deadline: "2024/08/20", progress: 100 }
   ];
 
@@ -26,6 +26,6 @@ export const tstypes = ["M1", "M2"]
 
 //users
 export const users = [
-  {first_name: "Shirong", last_name: "tang", email: "shirong.tang@onedrug.co but really long name", position:"web developer", timezone:"EDT"}
+  {first_name: "Shirong", last_name: "tang", email: "shirong.tang@onedrug.co but really long name", position:"Web developer", timezone:"EDT", status:"online"}
 ]
 

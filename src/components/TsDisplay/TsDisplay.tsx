@@ -30,14 +30,15 @@ const TsDisplay = ({tasks, onDelete}: TsProps) => {
         <table className={styles['table']}>
             <thead>
                 <tr>
-                    <th style={{width :"50%"}}>Title</th>
-                    <th style={{width :"15%"}}>Deadline</th>
-                    <th style={{width :"15%"}}>Members</th>
-                    <th style={{width :"15%"}}>priority</th>
+                    <th className={styles['t-title']}>Title</th>
+                    <th className={styles['t-visible']}>Deadline</th>
+                    <th className={styles['t-visible']}>Members</th>
+                    <th className={styles['t-visible']}>priority</th>
                     <th> </th>
                 </tr>
             </thead>
         </table>
+        
         {tasks.map(tasks => 
             <TsItem
                 id={tasks.id}

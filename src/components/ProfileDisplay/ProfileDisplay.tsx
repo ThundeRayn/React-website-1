@@ -15,6 +15,7 @@ interface Member{
     position:string;
     email:string;
     timezone:string;
+    status:string;
 }
 
 const ProfileDisplay = ({member}:Props) => {
@@ -26,7 +27,7 @@ const ProfileDisplay = ({member}:Props) => {
 
         <div className={styles['info']}>
             <div className={styles['info-list']}>
-                < VscMilestone size={30} style={{display:"inline-block"}}/> 
+                < VscMilestone size={26} style={{display:"inline-block"}}/> 
                 <p className={styles['content']}>{member.position}</p>
             </div>
 
@@ -39,7 +40,11 @@ const ProfileDisplay = ({member}:Props) => {
                 < HiOutlineMail  size={25} style={{display:"inline-block"}}/>
                 <p className={styles['content']}>{member.email}</p>
             </div>
-            <div className={styles['info-list']}>< IoLocationSharp size={25}/></div>
+
+            <div className={styles['info-list']}>
+                < IoLocationSharp size={25}/>
+                <p className={styles['content']}>{member.status}</p>
+            </div>
         </div>
 
     </div>

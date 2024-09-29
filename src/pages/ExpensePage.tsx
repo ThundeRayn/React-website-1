@@ -1,10 +1,15 @@
-import NavBar from "../components/NavBar"
+interface Props{
+    navOpen:boolean;
+}
 
-export const ExpensePage =() =>{
+export const ExpensePage =({navOpen}:Props) =>{
     return(
         <>
-        {/*<NavBar notificationCount={1} page={5} />*/}
-            <h1>Expense page</h1>
+        <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
+            :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>
+                Expenses Tracker</h1>
+        </div>
         </>
     )
 }

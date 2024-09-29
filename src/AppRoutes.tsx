@@ -31,14 +31,16 @@ export const AppRoutes =() => {
 
                 <Route path="/home" element={<HomePage navOpen={Open}/>}/>
                 <Route path="/profile" element={<ProfilePage navOpen={Open}/>}/>
-                <Route path="/notification" element={<NotificationPage/>}/>
+                <Route path="/notification" element={<NotificationPage navOpen={Open}/>}/>
                 <Route path="/milestone" element={<MilestonePage navOpen={Open}/>}/>
                 <Route path="/tasks" element={<TaskPage navOpen={Open}/>}/>
-                <Route path="/expenses" element={<ExpensePage/>}/>
-                <Route path="/members" element={<MembersPage/>}/>
+                <Route path="/expenses" element={<ExpensePage navOpen={Open}/>}/>
+                <Route path="/members" element={<MembersPage navOpen={Open}/>}/>
 
                 {/*ReDirect paths */}
-                {['/Home', '/dashboard','/Dashboard','/main','/Main'].map(path => <Route path={path} element={<Navigate to="/"/>}/>)}
+                {['Signin', 'signin', 'SignIn','login'].map(path => <Route path={path} element={<Navigate to="/"/>}/>)}
+
+                {['/Home', '/dashboard','/Dashboard','/main','/Main'].map(path => <Route path={path} element={<Navigate to="/home"/>}/>)}
                 {['Profile', 'user', 'User'].map(path => <Route path={path} element={<Navigate to="/profile"/>}/>)}
                 {['Notification', 'Notifications', 'notifications'].map(path => <Route path={path} element={<Navigate to="/notification"/>}/>)}
                 {['Milestone', 'Milestones', 'milestones'].map(path => <Route path={path} element={<Navigate to="/milestone"/>}/>)}

@@ -25,7 +25,7 @@ export const MilestonePage =({navOpen}:Props) =>{
         <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
                     :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
 
-            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal"}}>Milestone page</h1>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>Milestone page</h1>
             <div className="mb-3">
               <MilestoneFilter onSelectType={mstype => setSeletedType(mstype)} /></div>
             <MsDisplay milestones={displayMilestones} onDelete={(id) => SetMilestones(milestones.filter(m => m.id !== id))} />

@@ -1,10 +1,16 @@
-import NavBar from "../components/NavBar"
 
-export const MembersPage =() =>{
+interface Props{
+    navOpen:boolean;
+}
+
+export const MembersPage =({navOpen}:Props) =>{
     return(
         <>
-        {/*<NavBar notificationCount={1} page={6} />*/}
-            <h1>Members page</h1>
+        <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
+            :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>
+                Members</h1>
+        </div>
         </>
     )
 }

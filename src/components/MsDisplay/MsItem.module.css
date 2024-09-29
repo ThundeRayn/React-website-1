@@ -5,6 +5,11 @@
     margin-bottom: 1rem;
     border-radius: 10px;
     position:relative;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .container:hover{
@@ -25,6 +30,7 @@
     margin-top:17px;
     position:absolute;
     z-index:1;
+    pointer-events: none;
 }
 .Title h2{
     padding-top: 1rem;

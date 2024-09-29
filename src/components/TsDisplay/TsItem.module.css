@@ -22,3 +22,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+@media only screen and (max-width: 680px) {
+    .contents {
+        display: none;
+    }
+    .title{
+        width: 92%;
+    }
+}
+
+.delete-btn{
+    cursor:pointer;
+}

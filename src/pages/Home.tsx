@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as loadData from '../data/loadData';
 import Notification from "../components/Notification";
 import Border from '../components/Board';
@@ -9,6 +9,11 @@ interface Props{
     navOpen:boolean
 }
 export const HomePage =({navOpen}:Props) =>{
+
+    //change file title
+    useEffect(() => {
+        document.title = 'OneTrack';
+    })
 
     //grouplist variables
     const [notificationList, Set_List] = useState(loadData.notifications);
@@ -26,10 +31,10 @@ export const HomePage =({navOpen}:Props) =>{
 
     return(
         <>
-            <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
-                    :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
+            <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px",  transition: "all 0.5s ease-in-out"}
+                    :{paddingLeft: "80px", paddingTop:"20px",  transition: "all 0.5s ease-in-out"}}>
 
-                <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal"}}>Home page</h1>
+                <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>Home page</h1>
 
                 <div style={{display:"flex"}}>
                     <div style={{display:"inline-block"}}>

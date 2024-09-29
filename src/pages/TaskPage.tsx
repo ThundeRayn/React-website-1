@@ -18,11 +18,10 @@ export const TaskPage =({navOpen}:Props) =>{
     
     return(
         <>
-         
-        <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}
+        <div style={navOpen? {paddingLeft: "130px", paddingTop:"20px", userSelect:"none",transition: "all 0.5s ease-in-out"}
                     :{paddingLeft: "80px", paddingTop:"20px", transition: "all 0.5s ease-in-out"}}>
 
-            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal"}}>Task page</h1>
+            <h1 style={{fontSize:"45px",fontWeight:"200", fontStyle:"normal", userSelect:"none"}}>Task page</h1>
             <TaskFilter onSelectType={tstype => setSeletedtaskType(tstype)} />
             <TsDisplay tasks={displayTasks} onDelete={(id) => SetTasks(tasks.filter(t => t.id !== id))} />
         </div>

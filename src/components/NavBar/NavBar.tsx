@@ -45,7 +45,7 @@ function NavBar({notificationCount,Open,Set_Open}:notificationProps){
         
         <ul className={styles.nav}>
         {icon_list.map((item,index)=>(
-          <li className={styles.tab}>
+          <li className={styles.tab} key={index}>
             {(SelectTab===index)? 
                 <div className={!Open? styles['selected-icon']:styles['selected-icon-open']}>
                     <a href={subpage_links[index]}><SelectIcon Icon={item} newsize={icon_size[index]} newcolor='#4A4A4B'/></a>
@@ -64,7 +64,7 @@ function NavBar({notificationCount,Open,Set_Open}:notificationProps){
         <div>
         {Open && <ul className={styles['nav-titles']}>
         {icon_title.map((item,index)=>(
-            <li className={styles['nav-titles-list']}>
+            <li className={styles['nav-titles-list']} key={index}>
                 {(SelectTab===index)? 
                     <div className={styles['nav-titles-item']}>{item}</div>
                 : <div>{item}</div>
@@ -73,7 +73,7 @@ function NavBar({notificationCount,Open,Set_Open}:notificationProps){
         </ul>}</div>
 
         {!(JSON.stringify(notificationCount) === '0') 
-        && <span className={styles.dot}>{notificationCount}</span>}
+        && <span className={styles.dot} style={{userSelect:"none"}}>{notificationCount}</span>}
     </div>
 
     );

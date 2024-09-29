@@ -21,7 +21,7 @@ const TsItem = ({title,deadline,members,priority,progress, onDelete}:Props) => {
         <div className={styles['contents']}>{deadline}</div>
         <div className={styles['contents']}>{members}</div>
         <div className={styles['contents']}>{priority}</div> 
-        <RxCross2 onClick={()=>onDelete} size={20} style={{cursor:"pointer"}}/>
+        <RxCross2 onClick={()=>onDelete} size={20} className={styles['delete-btn']}/>
     </div>
   )
 }
